@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Ramakrishna Engineering College</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-6">
+        <img src="images/srec.jpg" alt="Sri Ramakrishna Engineering College Logo" class="h-20 mb-5">
+        <h1 class="text-3xl font-bold text-center">Welcome to Sri Ramakrishna Engineering College</h1>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#about" class="hover:underline">About Us</a></li>
+                <li><a href="#placement" class="hover:underline">Placement</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+    </header><br>
+
+    <div class="slideshow-container relative">
+        <div class="mySlides fade">
+            <img src="images/college.jpg" class="w-full rounded-lg shadow-lg">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/lib.png" class="w-full rounded-lg shadow-lg">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/ted.png" class="w-full rounded-lg shadow-lg">
+        </div>
+        <a class="prev absolute top-1/2 left-0 transform -translate-y-1/2 text-white bg-blue-600 p-2 rounded-full" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next absolute top-1/2 right-0 transform -translate-y-1/2 text-white bg-blue-600 p-2 rounded-full" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <br>
+
+    <div class="text-center mt-4">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <section id="home" class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold">Home</h2>
+            <p>Welcome to SREC, where we empower the leaders of tomorrow. Explore our programs and discover your potential!</p>
+        </section>
+
+        <section id="about" class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold">About Us</h2>
+            <p>Founded in 1995, Sri Ramakrishna Engineering College has a rich tradition of academic excellence and community engagement. Our dedicated faculty and diverse student body create a vibrant learning environment.</p>
+            <p>We offer a variety of programs tailored to meet the needs of our students and prepare them for successful careers.</p>
+            <div class="mt-4">
+                <h3 class="text-xl font-semibold">Watch Our Introduction Video</h3>
+                <iframe class="w-full h-64 rounded-lg mt-2"
+                        src="https://www.youtube.com/embed/tXKg5XcujlI"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            
+        </section>
+
+        <section id="placement" class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold">Placement Report</h2>
+            <p class="highlight p-4">Our college has achieved remarkable placement records over the years, with various leading companies visiting our campus.</p>
+            <h3 class="text-xl font-semibold mt-4">Placement Statistics</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li>Percentage of students placed: <strong>80%</strong></li>
+                <li>Top recruiters: <strong>TCS, Infosys, Wipro, Accenture</strong></li>
+                <li>Average salary package: <strong>₹5,00,000 per annum</strong></li>
+                <li>Highest salary package: <strong>₹12,00,000 per annum</strong></li>
+            </ul>
+
+            
+            <div class="mt-4">
+                <a href="document/data.pdf" class="text-blue-600 hover:underline">Download Full Placement Report</a>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-semibold">Contact Us</h2>
+            <p>If you have any questions or would like more information, please reach out:</p>
+            <ul class="list-disc ml-5">
+                <li>Email: <a href="mailto:principal@srec.ac.in" class="text-blue-600 hover:underline">principal@srec.ac.in</a></li>
+                <li>Phone: +91 75300 89996</li>
+                <li>Address: Vattamalaipalayam, N.G.G.O Colony P.O, Coimbatore - 641 022</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center p-6">
+        <p class="mb-4">&copy; 2024 Sri Ramakrishna Engineering College. All rights reserved.</p>
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold mb-4">For more details contact</h3>
+            <form class="mt-4 flex flex-col items-center" id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" class="mb-4 p-3 rounded w-80" required aria-label="Your Name">
+                <input type="email" name="email" placeholder="Your Email Address" class="mb-4 p-3 rounded w-80" required aria-label="Your Email Address">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded w-40">Submit</button>
+            </form>
+            <div id="confirmationMessage" class="mt-4 text-green-500 hidden"></div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            document.getElementById('confirmationMessage').innerText = "Thank you for your submission!";
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+            // Here you could also send the data via AJAX if needed
+        });
+    </script>
+    
+</body>
+</html>
